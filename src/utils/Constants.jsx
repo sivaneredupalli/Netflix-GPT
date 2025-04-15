@@ -9,3 +9,5 @@ export const API_Options = {
     }
   };
 export const PostImage_CDN_URL = "https://image.tmdb.org/t/p/w200/";
+export const  SUPPORTING_LANGUAGES = [{searchIdentifier : "en",searchLanguage : "English"},{searchIdentifier : "telugu",searchLanguage : "Telugu"},{searchIdentifier : "hindi",searchLanguage : "Hindi"},
+  {searchIdentifier : "spanish",searchLanguage : "Spanish"}]

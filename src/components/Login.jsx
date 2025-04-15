@@ -64,7 +64,7 @@ signInWithEmailAndPassword(auth, Email.current.value,Password.current.value)
   }
   return (
     <div>
-      <div className='absolute w-screen px-8 py-2 bg-gradient-to-b from-black  text-4xl'>
+      <div className='absolute  w-full px-8 py-2 bg-gradient-to-b from-black  text-4xl'>
       <Header/>
       </div>
     <form onSubmit={(e)=>e.preventDefault()} className='bg-black absolute text-white m-auto right-0 left-0 w-3/12 p-12 my-18 opacity-85'>
@@ -77,7 +77,7 @@ signInWithEmailAndPassword(auth, Email.current.value,Password.current.value)
       <button onClick={formValidation} className='cursor-pointer p-2 my-4 font-bold bg-red-600 text-white rounded w-full'>{!signUpUser ? 'Sign In' : 'Sign Up'}</button>
       <p className='my-5 cursor-pointer' onClick={toggleSignUp}>{signUpUser ? "Already Registered User? Sign In Now." : "New to Netflix? Sign up now."} </p>
     </form>
-    <div className=''>
+    <div>
       <img src = {LOGIN_BG} alt='background image' />
     </div>
     </div>
