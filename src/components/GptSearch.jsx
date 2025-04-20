@@ -5,11 +5,11 @@ import GptSearchMovieSuggestion from './GptSearchMovieSuggestion'
 
 const GptSearch = () => {
   return (
-    <div className="relative w-full h-screen">
-        <div className="absolute inset-0 -z-10">
+    <div className="relative w-full h-screen ">
+        <div className="fixed inset-0 -z-10 ">
               <img  src = {LOGIN_BG} alt='background image' />
             </div>
-            <div className="pt-[10%] flex flex-col items-center h-full">
+            <div className="pt-[10%] flex flex-col items-center ">
             <GptSearchBar/>
             <GptSearchMovieSuggestion/>
             </div>

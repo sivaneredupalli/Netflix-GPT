@@ -1,9 +1,10 @@
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { addPopularMovies } from "../utils/movieSlice";
 import { useEffect } from "react";
 import { API_Options } from "../utils/Constants";
 
 const usePopularMovies = ()=>{
+  const popularMoviesCall = useSelector(store=>store.movie.addPopularMovies)
       const dispatch = useDispatch()
       const popularMovies = async()=>
       {
@@ -14,7 +15,7 @@ const usePopularMovies = ()=>{
         console.log(movies)
       }
       useEffect(()=>{
-        popularMovies()
+        !popularMoviesCall && popularMovies()
       },[])
 }
 export default usePopularMovies;

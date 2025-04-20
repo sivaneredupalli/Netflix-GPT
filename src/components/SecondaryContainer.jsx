@@ -5,7 +5,7 @@ const SecondaryContainer = () => {
   const movies = useSelector(store=>store.movie)
   return (
     <div className='bg-black w-screen' >
-      <div className='-mt-45 pl-3 pr-3 relative z-20'>
+      <div className='-mt-65 pl-3 pr-3 relative z-10'>
       {/* Now Playing movies are added here as addMovies */}
       <MovieList title={"Now Playing"} movies={movies.addMovies}/>  
       <MovieList title={"Popular"} movies={movies.addPopularMovies}/>

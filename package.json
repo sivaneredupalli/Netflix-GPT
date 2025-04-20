@@ -10,8 +10,10 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@google/genai": "^0.8.0",
     "@tailwindcss/vite": "^4.0.14",
     "firebase": "^11.5.0",
+    "openai": "^4.94.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-redux": "^9.2.0",
