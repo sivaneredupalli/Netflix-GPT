@@ -59,28 +59,71 @@ signInWithEmailAndPassword(auth, Email.current.value,Password.current.value)
   });
     }
   }
-    const toggleSignUp = ()=>{
-    setSignUpUser(!signUpUser) 
+  const toggleSignUp = () => {
+    // Clear all fields when switching modes
+    if (Email.current) Email.current.value = "";
+    if (Password.current) Password.current.value = "";
+    if (FullName.current) FullName.current.value = "";
+  
+    setErrorMessage(null);
+    setSignUpUser(!signUpUser);
   }
+  
   return (
-    <div>
-      <div className='absolute  w-full px-8 py-2 bg-gradient-to-b from-black  text-4xl'>
-      <Header/>
-      </div>
-    <form onSubmit={(e)=>e.preventDefault()} className='bg-black absolute text-white m-auto right-0 left-0 w-3/12 p-12 my-18 opacity-85'>
-    <h1 className='text-3xl font-bold my-4'>{!signUpUser ? "Sign In" : "Sign Up"}</h1>
-    {signUpUser && <input type='text' ref={FullName} className='p-2 my-4  bg-gray-300 text-black rounded w-full'  placeholder='Full Name'/>}
-      <input type='text' ref={Email} className='p-2 my-4  bg-gray-300 text-black rounded w-full' placeholder='Email address'/> 
-      <input type='text' ref={Password} className='p-2 my-4  bg-gray-300 text-black rounded w-full' placeholder='Password'/>
-      {signUpUser && <p className='p-2   text-lg text-red-500'>{errorMessage}</p>}
-      {!signUpUser && <p className='p-2   text-lg text-red-500'>{errorMessage}</p>}
-      <button onClick={formValidation} className='cursor-pointer p-2 my-4 font-bold bg-red-600 text-white rounded w-full'>{!signUpUser ? 'Sign In' : 'Sign Up'}</button>
-      <p className='my-5 cursor-pointer' onClick={toggleSignUp}>{signUpUser ? "Already Registered User? Sign In Now." : "New to Netflix? Sign up now."} </p>
-    </form>
-    <div>
-      <img src = {LOGIN_BG} alt='background image' />
-    </div>
-    </div>
+    
+      <div className="relative w-full h-screen">
+  
+  {/* Background image */}
+  <img 
+    className="absolute top-0 left-0 w-full h-full object-cover -z-10"
+    src={LOGIN_BG}
+    alt="Background"
+  />
+
+  {/* Gradient overlay */}
+  <div className="absolute top-0 left-0 w-full py-2 bg-gradient-to-b from-black z-10">
+    <Header />
+  </div>
+
+  {/* Login Form */}
+  <form 
+    onSubmit={(e) => e.preventDefault()} 
+    className="absolute text-white bg-black bg-opacity-80 rounded-lg p-9 md:p-14 w-10/12 md:w-3/12 m-auto top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-20 opacity-85"
+  >
+    <h1 className="text-3xl font-bold mb-6">{!signUpUser ? "Sign In" : "Sign Up"}</h1>
+    {signUpUser && (
+      <input
+        type="text"
+        ref={FullName}
+        className="p-2 my-4 bg-gray-300 text-black rounded w-full"
+        placeholder="Full Name"
+      />
+    )}
+    <input
+      type="text"
+      ref={Email}
+      className="p-2 my-4 bg-gray-300 text-black rounded w-full"
+      placeholder="Email address"
+    />
+    <input
+      type="text"
+      ref={Password}
+      className="p-2 my-4 bg-gray-300 text-black rounded w-full"
+      placeholder="Password"
+    />
+    <p className="p-2 text-lg text-red-500">{errorMessage}</p>
+    <button
+      onClick={formValidation}
+      className="cursor-pointer p-2 my-4 font-bold bg-red-600 text-white rounded w-full"
+    >
+      {!signUpUser ? "Sign In" : "Sign Up"}
+    </button>
+    <p className="my-5 cursor-pointer" onClick={toggleSignUp}>
+      {signUpUser ? "Already Registered User? Sign In Now." : "New to Netflix? Sign up now."}
+    </p>
+  </form>
+</div>
+
   )
 }
 export default Login

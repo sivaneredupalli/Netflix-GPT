@@ -5,6 +5,8 @@ import Browser from './components/Browser';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import appStore from "./utils/appStore";
 import { Provider } from "react-redux";
+import MoviePlayerPage from "./components/MoviePlayerPage";
+
 
 
 export default function App() {
@@ -21,7 +23,13 @@ const appRouter = createBrowserRouter([
   {
     path: '/browser',
     element: <Browser />
+  },
+  {
+    path:"/browser/:id", 
+    element:<MoviePlayerPage />
   }
+  
+
 ]);
 
 const root = ReactDOM.createRoot(document.getElementById("root"));

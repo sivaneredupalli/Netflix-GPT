@@ -40,10 +40,10 @@ const GptSearchBar = () => {
     dispatch(suggestedMovieResults({tmdbSearchMovies:tmdbResults, gptSearchMovies:movies}))
   }
   return (
-    <div className='w-full flex justify-center'>
-        <form className='w-1/2 bg-black grid grid-cols-12 rounded-2xl' onSubmit={(e)=>e.preventDefault()}>
-            <input type="search" ref={SearchResult} className='text-black text-xl col-span-9 rounded-lg p-3 m-1 bg-white'placeholder={lang[language].searchPlaceHolder} />
-            <button className='col-span-3 p-3 m-1 rounded-lg bg-red-600 text-white hover: cursor cursor-pointer' onClick={handleGptSearchClick}> {lang[language].Search}</button>
+    <div className=' pt-[36%] md:pt-[10%] w-[100%] flex justify-center pl-2 pr-2'>
+        <form className='w-full  md:w-1/2  bg-black grid grid-cols-12 md:grid md:grid-cols-12 rounded-md  md:rounded-lg pr-2' onSubmit={(e)=>e.preventDefault()}>
+            <input type="search" ref={SearchResult} className='text-black text-sm md:text-xl col-span-9 md:col-span-9 rounded-md md:rounded-lg p-3 md:p-3 m-1 bg-white'placeholder={lang[language].searchPlaceHolder} />
+            <button className='w-full col-span-3 md:col-span-3 m-1 text-sm md:text-xl rounded-md md:rounded-lg bg-red-600 text-white hover:cursor-pointer' onClick={handleGptSearchClick}> {lang[language].Search}</button>
         </form>
     </div>
   )
